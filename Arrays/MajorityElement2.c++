@@ -137,7 +137,8 @@ int main() {
     printArray(ans1);
     vector<int> ans2 = MajorityElemet2Better2(arr);
     printArray(ans2);
-    // vector<int> ans = MajorityElemet2Optimal(arr);
+    vector<int> ans3 = MajorityElemet2Optimal(arr);
+    printArray(ans3);
     cout << "\n";
     return 0;
 }

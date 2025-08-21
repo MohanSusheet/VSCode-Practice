@@ -83,7 +83,7 @@ vector<int> MajorityElemet2Better2(vector<int> &arr)
 }
 vector<int> MajorityElemet2Optimal(vector<int> &arr)
 {
-    //Extended Boyer Moore’s Voting Algorithm
+    //Optimal Approach: Extended Boyer Moore’s Voting Algorithm (extending majorityElementI logic)
     //T.C -> O(N) , S.C -> (1)
     int n = arr.size();
     vector<int> ans;
@@ -115,14 +115,14 @@ vector<int> MajorityElemet2Optimal(vector<int> &arr)
         }
     }
 
-    count1 = 0, count2 = 0;
+    int count11 = 0, count22 = 0;
     for(int i = 0; i < n; i++)
     {
-        if(arr[i] == ele1)count1++;
-        else if(arr[i] == ele2)count2++;
+        if(arr[i] == ele1)count11++;
+        else if(arr[i] == ele2)count22++;
     }
-    if(count1 > (n/3))ans.push_back(ele1);
-    if(count2 > (n/3))ans.push_back(ele2);
+    if(count11 > (n/3))ans.push_back(ele1);
+    if(count22 > (n/3))ans.push_back(ele2);
 
     return ans;
 

@@ -61,6 +61,7 @@ vector<int> majorityElementIIBetter(vector<int> &arr)
 vector<int> majorityElementIIOptimal(vector<int>&arr)
 {
     //Optimal Approach: using the same idea as majority element >n/2 with an extension.
+    //Extended Boyer Moore’s Voting Algorithm
     //T.C --> O(N), S.C --> O(1)
     int n = arr.size();
     vector<int> ans;

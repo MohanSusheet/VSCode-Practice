@@ -41,20 +41,14 @@ vector<int> topViewOfBinaryTree(TreeNode* root)
     
     while(!q.empty())
     {
-        int size = q.size();
-        
-        for(int i=0; i < size; i++)
-        {
-            pair<int, TreeNode*> node = q.front();
-            q.pop();
-        
-            int v = node.first;
-            if(m.find(v) == m.end())m[v] = node.second->val;
-            if(node.second->left)q.push({v-1, node.second->left});
-            if(node.second->right)q.push({v+1, node.second->right});
-        }
+        pair<int, TreeNode*> node = q.front();
+        q.pop();
+
+        if(m.find(node.first) == m.end())m[node.first] = node.second->val;
+        if(node.second->left)q.push({node.first - 1, node.second->left});
+        if(node.second->right)q.push({node.first + 1, node.second->right});
     }
-    
+
     for(auto it: m)
     {
         ans.push_back(it.second);

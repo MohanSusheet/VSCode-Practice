@@ -30,7 +30,9 @@ public:
 
 vector<int> topViewOfBinaryTree(TreeNode* root)
 {
-    //T.C --> O(N)*log N [multiset], S.C -->O(N)[map] + O(N)[queue] ~~ O(N) 
+    //Approach: Using the VERTICAL LINE concept to map each node to its vertical
+    //ans since we wan the top view that means we only need the very first node on each vertical line 
+    //T.C --> O(N)*log N [map], S.C -->O(N)[map] + O(N)[queue] ~~ O(N) 
     vector<int> ans;
     if(root == NULL)return ans;
     
